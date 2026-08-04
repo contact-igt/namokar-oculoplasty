@@ -307,7 +307,30 @@
 
 @media (max-width: 640px) {
   .section {
-    padding: 55px 0;
+    padding: 44px 0 50px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .headerText {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .headerNavControls {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
   }
 
   .cardCol {
@@ -316,11 +339,14 @@
   }
 
   .title {
-    font-size: 26px;
+    font-size: clamp(22px, 6.5vw, 26px);
+    line-height: 1.25;
+    text-align: center;
   }
 
   .subtitle {
     font-size: 14px;
+    text-align: center;
   }
 
   .imgBox {
@@ -328,6 +354,20 @@
   }
 
   .card {
-    padding: 22px 18px 18px;
+    padding: 20px 14px 16px;
+  }
+
+  .ctaWrapper {
+    width: 100%;
+    padding: 0;
+  }
+
+  .galleryBtn {
+    width: 100%;
+    padding: 13px 12px;
+    font-size: 13.5px;
+    white-space: nowrap;
+    justify-content: center;
+    text-align: center;
   }
 }

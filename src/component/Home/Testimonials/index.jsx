@@ -45,9 +45,19 @@ export default function Testimonials() {
   const { eyebrow, title, reviews } = testimonialsContent;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const autoScrollTimer = useRef(null);
 
   const totalReviews = reviews.length;
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const stopAutoScroll = () => {
     if (autoScrollTimer.current) {
@@ -80,7 +90,7 @@ export default function Testimonials() {
 
   const getVisibleReviews = () => {
     const items = [];
-    const count = Math.min(3, totalReviews);
+    const count = isMobile ? 1 : Math.min(3, totalReviews);
     for (let i = 0; i < count; i++) {
       items.push(reviews[(activeIndex + i) % totalReviews]);
     }

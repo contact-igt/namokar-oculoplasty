@@ -30,7 +30,6 @@ export default function AestheticCta() {
                 <Link href={href || "#appointment-form"} className={styles.ctaBtn}>
                   <Calendar size={20} strokeWidth={2} />
                   <span>{btnLabel}</span>
-                  <ArrowRight size={18} strokeWidth={2.2} />
                 </Link>
               </div>
             </div>
