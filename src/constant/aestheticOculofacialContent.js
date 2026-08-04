@@ -20,7 +20,7 @@ export const aestheticOculofacialContent = {
       {
         prefix: "",
         suffix: "+",
-        label: "Years Eye Care Experience",
+        label: "Years of Experience",
         countTo: 30,
         durationMs: 1400,
         decimals: 0,

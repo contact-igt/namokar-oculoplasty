@@ -9,7 +9,7 @@ export const testimonialsContent = {
       stars: 5,
       author: {
         name: "Tushar Aggarwal",
-        role: "Eye Care Patient",
+        role: "Patient Review",
       },
     },
     {
@@ -42,15 +42,15 @@ export const testimonialsContent = {
         role: "Patient Review",
       },
     },
-    {
-      id: 5,
-      quote:
-        "During the appointment, the eye doctor was thorough and patient in answering all of my questions and explaining the results of my exam. They took the time to make sure I understood everything and addressed any concerns I had. The attention to detail and expertise were evident in every aspect of the appointment.love there work.",
-      stars: 5,
-      author: {
-        name: "Gaurav",
-        role: "Patient Review",
-      },
-    },
+    // {
+    //   id: 5,
+    //   quote:
+    //     "During the appointment, the eye doctor was thorough and patient in answering all of my questions and explaining the results of my exam. They took the time to make sure I understood everything and addressed any concerns I had. The attention to detail and expertise were evident in every aspect of the appointment.love there work.",
+    //   stars: 5,
+    //   author: {
+    //     name: "Gaurav",
+    //     role: "Patient Review",
+    //   },
+    // },
   ],
 };
