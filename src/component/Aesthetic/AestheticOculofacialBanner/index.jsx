@@ -8,40 +8,24 @@ import RevealOnView, { WordReveal } from "@/common/RevealOnView";
 import { aestheticOculofacialContent } from "@/constant/aestheticOculofacialContent";
 import styles from "./styles.module.css";
 
+import CountUp from "react-countup";
+
 function AnimatedStat({ stat, active }) {
-  const [display, setDisplay] = useState(0);
-
-  useEffect(() => {
-    if (!active) return;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (prefersReducedMotion) {
-      setDisplay(stat.countTo);
-      return;
-    }
-    const duration = stat.durationMs ?? 1400;
-    const start = performance.now();
-    let frameId = 0;
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(stat.countTo * eased);
-      if (progress < 1) frameId = window.requestAnimationFrame(tick);
-    };
-    frameId = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(frameId);
-  }, [active, stat]);
-
-  const raw = display.toFixed(stat.decimals ?? 0);
-  const formatted = stat.formatThousands
-    ? Number(raw).toLocaleString("en-IN")
-    : raw;
-
   return (
     <strong className={styles.statValue}>
       {stat.prefix}
-      {formatted}
+      {active ? (
+        <CountUp
+          start={0}
+          end={stat.countTo}
+          duration={2.2}
+          decimals={stat.decimals ?? 0}
+          decimal="."
+          separator={stat.formatThousands ? "," : ""}
+        />
+      ) : (
+        "0"
+      )}
       <span
         className={`${styles.statSuffix} ${
           stat.isStar ? styles.statStar : ""
