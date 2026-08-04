@@ -43,7 +43,12 @@ export default function SpecialistLedApproach() {
             const IconComponent = iconMap[card.icon] || ShieldCheck;
 
             return (
-              <RevealOnView key={card.id} variant="fadeUp" delay={100 + index * 60}>
+              <RevealOnView
+                key={card.id}
+                variant="fadeUp"
+                delay={100 + index * 60}
+                className={styles.cardItem}
+              >
                 <div className={styles.card}>
                   <div className={styles.iconCircle}>
                     <IconComponent size={24} className={styles.icon} />

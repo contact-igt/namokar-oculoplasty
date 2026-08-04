@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <BannerNav />
-      <div style={{ flex: 1, paddingTop: "var(--header-height, 98px)" }}>
+      <div style={{ flex: 1 }}>
         {children}
       </div>
       <FloatingCta />

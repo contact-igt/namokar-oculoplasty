@@ -5,49 +5,51 @@ export const testimonialsContent = {
     {
       id: 1,
       quote:
-        "I underwent Ptosis surgery in Left eye upper lid at Namokar Eye & Oculoplasty Centre. Dr. Poonam Jain is a perfectionist. Had a very reassuring and good experience.",
+        "Very professional, knowledgeable, caring and reliable staff. Good treatment.",
       stars: 5,
-      reviewUrl:
-        "https://www.google.com/maps/contrib/115648020602114368040/reviews?hl=en-IN",
       author: {
-        name: "Tk Sapra",
-        role: "Eyelid Procedure Patient",
+        name: "Tushar Aggarwal",
+        role: "Eye Care Patient",
       },
     },
     {
       id: 2,
       quote:
-        "It's a very nice hospital and Dr Poonam Jain is a very good cataract and oculoplasty surgeon. I recommend this eye hospital to my friends and relatives.",
+        "A very good doctor, totally satisfied with the treatment",
       stars: 5,
-      reviewUrl:
-        "https://www.google.com/maps/contrib/116020543511903471034/reviews?hl=en-IN",
       author: {
-        name: "Braj Bijoria",
-        role: "Oculoplasty Care",
+        name: "Tarangita Dixit",
+        role: "Patient Review",
       },
     },
     {
       id: 3,
       quote:
-        "I have got my RE Orbitotomy done by Dr. Poonam Jain at Namokar Eye & Oculoplasty Centre. It was a highly satisfactory surgery and I recommend her to my friends and family.",
+        "Doctor (Mrs. Poonam Jain) and staffs are very helpful and supportive they are give you right advice .",
       stars: 5,
-      reviewUrl:
-        "https://www.google.com/maps/contrib/113431116000369405687/reviews?hl=en-IN",
       author: {
-        name: "Palvinder Singh",
-        role: "Oculoplastic Surgery",
+        name: "Preeti Jha",
+        role: "Patient Review",
       },
     },
     {
       id: 4,
       quote:
-        "I had great experience with Doctor Poonam Jain who is a seasoned ophthalmic and oculoplastic surgeon. I felt heard and well taken care of throughout the procedure.",
+        "Dr. Poonam Jain at Namokar Eye & Oculoplasty Centre provides excellent supervision and quick service. The centre is easily accessible, with subsidies available and extremely supportive staff. All equiqment is sterilized, ensuring a safe and comfortable experience.",
       stars: 5,
-      reviewUrl:
-        "https://www.google.com/maps/contrib/111920516120089931831/reviews?hl=en-IN",
       author: {
-        name: "Tina Legesse",
-        role: "Oculoplastic Patient",
+        name: "Kamlesh Kumar",
+        role: "Patient Review",
+      },
+    },
+    {
+      id: 5,
+      quote:
+        "During the appointment, the eye doctor was thorough and patient in answering all of my questions and explaining the results of my exam. They took the time to make sure I understood everything and addressed any concerns I had. The attention to detail and expertise were evident in every aspect of the appointment.love there work.",
+      stars: 5,
+      author: {
+        name: "Gaurav",
+        role: "Patient Review",
       },
     },
   ],
