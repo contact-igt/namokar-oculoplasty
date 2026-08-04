@@ -3,7 +3,7 @@
   width: 100%;
   overflow: clip;
   background: #ffffff;
-  padding: 80px 0px;
+  padding: 48px 0px 84px;
 }
 
 .inner {
@@ -40,66 +40,74 @@
 }
 
 .title {
-  margin: 16px 0 0;
+  margin: 12px 0 0;
   font-family: var(--font-satoshi);
   color: var(--color-navy);
-  font-size: 44px;
+  font-size: 34px;
   font-weight: 500;
-  line-height: 52px;
+  line-height: 42px;
   letter-spacing: -0.5px;
 }
 
 .sectionDescription {
   max-width: 640px;
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   font-family: var(--font-satoshi);
   color: #64748b;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 400;
-  line-height: 23px;
+  line-height: 21px;
 }
 
 .body {
-  display: grid;
-  grid-template-columns: minmax(360px, 0.88fr) minmax(270px, 0.72fr) minmax(300px, 0.78fr);
-  gap: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: stretch;
+  gap: 28px;
   width: 100%;
-  margin-top: 42px;
+  margin-top: 28px;
 }
 
 .singleDoctorBody {
-  grid-template-columns: minmax(440px, 580px) minmax(400px, 500px);
-  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  width: 100%;
 }
 
 .doctorCard {
   background: #ffffff;
   font-family: var(--font-satoshi);
   box-shadow: 0 14px 40px rgba(27, 60, 116, 0.08);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
   transition:
     transform 300ms ease,
     box-shadow 300ms ease;
   overflow: hidden;
+  flex: 1 1 540px;
+  max-width: 580px;
 }
 
 .doctorCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 56px rgba(27, 60, 116, 0.14);
+  transform: translateY(-4px);
+  box-shadow: 0 22px 56px rgba(27, 60, 116, 0.12);
 }
 
 .largeCard {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .largeDoctorImageWrap {
-  width: 100%;
-  height: 500px;
+  width: 260px;
+  flex-shrink: 0;
+  min-height: 100%;
   overflow: hidden;
   background: #eef9ff;
   position: relative;
@@ -110,7 +118,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   transition: transform 400ms ease;
 }
 
@@ -119,41 +127,43 @@
 }
 
 .largeDoctorInfo {
-  padding: 24px 28px 30px;
+  padding: 24px 26px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
+  align-items: flex-start;
+  flex: 1;
 }
 
 .largeCard .doctorName {
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   font-family: var(--font-satoshi);
   color: var(--color-navy);
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 36px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
   letter-spacing: -0.2px;
+  text-align: left;
 }
 
 .doctorDesignationWrap {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .largeCard .doctorDesignation {
-  margin: 2px 0;
-  color: #727c8d;
+  margin: 3px 0;
+  color: #64748b;
   font-family: var(--font-satoshi);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 22px;
+  line-height: 20px;
   letter-spacing: -0.1px;
 }
 
 .cardCallButton {
   margin-top: auto;
   width: 100%;
-  min-height: 48px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -163,7 +173,7 @@
   background: #ffffff;
   color: var(--color-navy, #1b4281);
   font-family: var(--font-satoshi);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(27, 66, 129, 0.08);
@@ -178,31 +188,27 @@
 }
 
 .formWrapper {
-  align-self: stretch;
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 0 16px;
-  scroll-margin-top: calc(var(--header-height, 98px) + 24px);
+  flex: 1 1 380px;
+  max-width: 420px;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .formCard {
   width: 100%;
   overflow: hidden;
   border: 0;
-  border-radius: 10px;
+  border-radius: 12px;
   background: #ffffff;
   box-shadow: 0 16px 44px rgba(27, 60, 116, 0.08);
   display: flex;
   flex-direction: column;
-  position: sticky;
-  top: calc(var(--header-height, 98px) + 20px);
 }
 
 .formHeader {
   position: relative;
-  height: 56px;
+  height: 50px;
   background: #1d4277;
   display: flex;
   align-items: center;
@@ -213,9 +219,9 @@
   margin: 0;
   color: #ffffff;
   font-family: var(--font-satoshi);
-  font-size: 21px;
-  font-weight: 500;
-  line-height: 26px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 24px;
   letter-spacing: -0.2px;
   text-align: center;
 }
@@ -223,8 +229,8 @@
 .formBody {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 30px 28px;
+  gap: 16px;
+  padding: 22px 24px;
   flex-grow: 1;
 }
 
@@ -243,7 +249,7 @@
   gap: 4px;
   width: 100%;
   color: #1e293b;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   line-height: 18px;
 }
@@ -258,16 +264,16 @@
 .field input,
 .field select {
   width: 100%;
-  height: 48px;
+  height: 44px;
   border: 1.5px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: 8px;
   outline: none;
   background: #f8fafc;
   color: #0f172a;
   font-family: var(--font-satoshi);
   font-size: 14px;
   font-weight: 500;
-  padding: 0 18px;
+  padding: 0 16px;
   transition:
     border-color 220ms ease,
     box-shadow 220ms ease;
@@ -320,16 +326,16 @@
 
 .submitButton {
   width: 100%;
-  min-height: 52px;
-  padding: 14px 32px;
-  margin-top: 12px;
+  min-height: 46px;
+  padding: 12px 24px;
+  margin-top: 8px;
   border: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--color-orange, #ed7612);
   color: #ffffff;
   cursor: pointer;
   font-family: var(--font-satoshi);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.2;
   box-shadow: 0 6px 20px rgba(237, 118, 18, 0.3);
@@ -441,49 +447,57 @@
 
 @media (max-width: 1199px) {
   .doctorsSection {
-    padding: 80px 20px;
+    padding: 40px 20px;
   }
 
-  .singleDoctorBody {
-    grid-template-columns: 1fr 1fr;
+  .doctorCard {
     max-width: 100%;
   }
 
   .formWrapper {
-    grid-column: span 1;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  .formCard {
-    position: static;
+    max-width: 360px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 640px) {
   .doctorsSection {
-    padding: 60px 16px;
+    padding: 36px 16px;
   }
 
   .header {
     align-items: flex-start;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
 
   .title {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 26px;
+    line-height: 34px;
   }
 
-  .singleDoctorBody {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .doctorCard {
+    flex-direction: column;
+    max-width: 100%;
   }
 
-  .largeCard,
+  .largeDoctorImageWrap {
+    width: 100%;
+    height: 220px;
+  }
+
+  .largeDoctorInfo {
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .largeCard .doctorName,
+  .doctorDesignationWrap {
+    text-align: center;
+  }
+
   .formWrapper {
-    max-width: 380px;
-    margin: 0 auto;
+    max-width: 100%;
+    flex: 1 1 100%;
   }
 }
