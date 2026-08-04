@@ -1,0 +1,52 @@
+.reveal {
+  will-change: transform, opacity;
+}
+
+.fadeUp {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.65s ease;
+}
+
+.fadeLeft {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fadeRight {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.stagger {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.60s ease, transform 0.60s ease;
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.wordRevealRoot {
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.wordVisible {
+  opacity: 1;
+  transform: none;
+}

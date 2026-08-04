@@ -1,0 +1,153 @@
+/* Desktop Floating Sidebar */
+.desktopFloating {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.actionBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px 0 0 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-satoshi), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, filter 0.2s ease;
+  transform: translateX(calc(100% - 46px));
+}
+
+.actionBtn:hover {
+  transform: translateX(0);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.label {
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+/* Individual Platform Colors */
+.phone {
+  background: linear-gradient(135deg, #1b4281, #0f2c5a);
+}
+
+.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.appointment {
+  background: linear-gradient(135deg, #ed7612, #d6670c);
+}
+
+.instagram {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.youtube {
+  background: linear-gradient(135deg, #ff0000, #c40000);
+}
+
+.facebook {
+  background: linear-gradient(135deg, #1877f2, #0d5cb6);
+}
+
+/* Mobile Bottom Action Bar */
+.mobileBar {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .desktopFloating {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktopFloating {
+    display: none;
+  }
+
+  .mobileBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    gap: 0;
+    padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.97);
+    border-top: 1px solid rgba(27, 66, 129, 0.15);
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobileAction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 0;
+    color: #4b5563;
+    text-decoration: none;
+    transition: all 0.18s ease;
+  }
+
+  .mobileAction:hover,
+  .mobileAction:active {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .mobileLabel {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .mobilePhone {
+    color: #1b4281;
+  }
+
+  .mobileWhatsapp {
+    color: #25d366;
+  }
+
+  .mobileAppointment {
+    color: #ed7612;
+  }
+
+  .mobileInstagram {
+    color: #e1306c;
+  }
+
+  .mobileYoutube {
+    color: #ff0000;
+  }
+}

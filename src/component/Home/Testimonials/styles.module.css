@@ -1,0 +1,251 @@
+.testimonialsSection {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 100px 0px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.inner {
+  position: relative;
+  width: var(--site-width, 1320px);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-satoshi), sans-serif;
+  color: var(--color-coral, #ff684c);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.eyebrowLine {
+  display: inline-block;
+  width: 120px;
+  height: 2px;
+  border-radius: 30px;
+  background: var(--color-coral, #ff684c);
+}
+
+.title {
+  margin: 18px 0 0 0;
+  font-family: var(--font-satoshi), sans-serif;
+  color: var(--color-navy, #030f2f);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 57.6px;
+  letter-spacing: -0.5px;
+}
+
+.navButtons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--color-coral, #ff684c);
+  background: #ffffff;
+  color: var(--color-coral, #ff684c);
+  cursor: pointer;
+  transition: all 0.23s ease;
+}
+
+.navButton:hover {
+  background: var(--color-coral, #ff684c);
+  color: #ffffff;
+  border-color: var(--color-coral, #ff684c);
+  box-shadow: 0 5px 15px rgba(255, 104, 76, 0.2);
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.testimonialWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 30px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 45px rgba(27, 60, 116, 0.05);
+  min-height: 230px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f2f6fc;
+}
+
+.quote {
+  margin: 0;
+  font-family: var(--font-satoshi), sans-serif;
+  color: #1b2d5a;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  flex: 1;
+}
+
+.quoteClamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.seeMoreBtn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-satoshi), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2aa7ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  align-self: flex-start;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-top: 24px;
+}
+
+.starIcon {
+  flex-shrink: 0;
+}
+
+.authorMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 8px;
+}
+
+.avatarWrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: #e6ebef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  color: #6b8fa6;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  margin: 0;
+  font-family: var(--font-satoshi), sans-serif;
+  color: var(--color-navy, #030f2f);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.authorRole {
+  margin: 2px 0 0 0;
+  font-family: var(--font-satoshi), sans-serif;
+  color: #727c8d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@media (max-width: 1199px) {
+  .testimonialsSection {
+    padding: 100px 0 80px;
+  }
+  .inner {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  .header {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonialsSection {
+    padding: 60px 0 60px;
+  }
+  .title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .eyebrow {
+    font-size: 15px;
+  }
+  .eyebrowLine {
+    width: 60px;
+  }
+  .card {
+    padding: 28px 24px;
+    min-height: auto;
+  }
+}
