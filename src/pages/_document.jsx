@@ -10,6 +10,18 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T72CNPXD');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+
         {/* Microsoft Clarity Analytics */}
         <script
           type="text/javascript"
@@ -23,47 +35,6 @@ export default function Document() {
             `,
           }}
         />
-
-        {/* 
-          ===================================================================
-          PPC TRACKING SNIPPET PLACEHOLDERS
-          Fill in your tracking IDs below before launching campaign.
-          ===================================================================
-        */}
-
-        {/* 
-          TODO: Google Analytics 4 (GA4) / Google Tag Manager
-          Uncomment and replace 'G-XXXXXXXXXX' with your GA4 Measurement ID:
-
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-XXXXXXXXXX');
-              `,
-            }}
-          />
-        */}
-
-        {/* 
-          TODO: Google Ads Conversion Tracking Tag
-          Uncomment and replace 'AW-XXXXXXXXX' with your Google Ads Conversion ID:
-
-          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'AW-XXXXXXXXX');
-              `,
-            }}
-          />
-        */}
 
         {/* Meta (Facebook) Pixel */}
         <script
@@ -93,6 +64,16 @@ export default function Document() {
         </noscript>
       </Head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-T72CNPXD"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <Main />
         <NextScript />
       </body>
