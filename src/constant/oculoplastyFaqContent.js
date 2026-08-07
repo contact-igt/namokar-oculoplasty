@@ -35,7 +35,7 @@ export const oculoplastyFaqContent = {
       id: "oculo-faq-6",
       question: "Are non-surgical treatment options available?",
       answer:
-        "Yes. Depending on your assessment, non-surgical options such as dermal fillers, thread lifts, or Botox may be recommended for refreshed results without surgery.",
+        "Yes. Depending on your assessment, non-surgical options such as dermal fillers, thread lifts may be recommended for refreshed results without surgery.",
     },
     {
       id: "oculo-faq-7",

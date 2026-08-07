@@ -111,12 +111,12 @@ export const aestheticOculofacialContent = {
         imageAlt: "Under-Eye Bag Correction",
       },
       {
-        id: "botox-fillers-threads",
-        title: "Botox, Fillers & Threads",
+        id: "fillers-threads",
+        title: "Fillers & Threads",
         description:
           "These treatments may be recommended depending on the patient’s concern, age, skin quality, and doctor’s assessment.",
-        imageSrc: "/assets/Aesthetic/botox.jpeg",
-        imageAlt: "Botox, Fillers & Threads",
+        imageSrc: "/assets/Aesthetic/filler.jpeg",
+        imageAlt: "Fillers & Threads",
       },
       {
         id: "aesthetic-oculofacial-care",
