@@ -91,8 +91,8 @@ export default function Footer() {
             </p>
             <p style={{ margin: "0", color: "#ffffff", fontSize: "14px" }}>
               <strong>Phone: </strong>
-              <a href="tel:+919810419720" style={{ color: "#ffffff", textDecoration: "none" }}>
-                +91-9810419720
+              <a href="tel:+919810157258" style={{ color: "#ffffff", textDecoration: "none" }}>
+                +91-9810157258
               </a>
             </p>
           </div>

@@ -137,7 +137,7 @@ export default function AestheticOculofacialBanner() {
                 <ArrowRight size={18} strokeWidth={2.2} aria-hidden="true" />
               </Link>
               <a
-                href="tel:+919810419720"
+                href="tel:+919810157258"
                 className={styles.ctaSecondary}
                 aria-label="Call Namokar Clinic Now"
               >
