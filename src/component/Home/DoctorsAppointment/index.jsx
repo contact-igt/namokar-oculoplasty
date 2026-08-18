@@ -163,7 +163,7 @@ export default function DoctorsAppointment() {
                     </p>
                   )}
                 </div>
-                <a href="tel:+919810419720" className={styles.cardCallButton} aria-label="Call Namokar Clinic Now">
+                <a href="tel:+919810157258" className={styles.cardCallButton} aria-label="Call Namokar Clinic Now">
                   <PhoneCall size={18} strokeWidth={2.2} aria-hidden="true" />
                   <span>Call Now</span>
                 </a>

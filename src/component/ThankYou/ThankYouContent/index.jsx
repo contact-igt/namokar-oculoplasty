@@ -21,7 +21,7 @@ export default function ThankYouContent() {
             </p>
 
             <div className={styles.buttonGroup}>
-              <a href="tel:+919810419720" className={styles.btnSecondary}>
+              <a href="tel:+919810157258" className={styles.btnSecondary}>
                 <span>Call Clinic Now</span>
                 <span className={styles.iconCircle}>
                   <PhoneCall size={18} strokeWidth={2.2} />

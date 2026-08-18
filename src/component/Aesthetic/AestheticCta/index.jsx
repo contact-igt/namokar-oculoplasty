@@ -22,7 +22,7 @@ export default function AestheticCta() {
               <p className={styles.description}>{description}</p>
 
               <div className={styles.btnGroup}>
-                <a href="tel:+919810419720" className={styles.callBtn} aria-label="Call Namokar Clinic Now">
+                <a href="tel:+919810157258" className={styles.callBtn} aria-label="Call Namokar Clinic Now">
                   <PhoneCall size={20} strokeWidth={2} />
                   <span>Call Now</span>
                 </a>
