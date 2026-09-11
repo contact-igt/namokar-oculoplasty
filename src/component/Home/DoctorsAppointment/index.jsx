@@ -14,8 +14,12 @@ import { getUTM } from "@/utils/useUTMSource";
 import styles from "./styles.module.css";
 
 const appointmentSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  phone: z.string().regex(/^[0-9\+\-\s]{10,15}$/, "Enter a valid 10-digit phone number"),
+  name: z
+    .string()
+    .trim()
+    .min(2, "Enter a valid name")
+    .regex(/^[A-Za-z][A-Za-z\s'.-]*$/, "Enter a valid name"),
+  phone: z.string().regex(/^\d{10}$/, "Enter a valid 10-digit phone number"),
 });
 
 export default function DoctorsAppointment() {
@@ -61,7 +65,7 @@ export default function DoctorsAppointment() {
     setServerStatus({ success: false, message: "" });
     const payload = {
       doctor: largeDoctor?.name || "Dr. Poonam Jain",
-      name: data.name,
+      name: data.name.trim(),
       phone: data.phone,
       ip_address: ipid,
       utm_source: getUTM("utm_source"),
@@ -215,6 +219,7 @@ export default function DoctorsAppointment() {
                     <input
                       type="text"
                       placeholder="Enter your full name"
+                      autoComplete="name"
                       {...register("name")}
                     />
                     {errors.name && (
@@ -233,6 +238,9 @@ export default function DoctorsAppointment() {
                     <input
                       type="tel"
                       placeholder="Enter 10-digit mobile number"
+                      inputMode="numeric"
+                      maxLength={10}
+                      autoComplete="tel"
                       {...register("phone")}
                     />
                     {errors.phone && (

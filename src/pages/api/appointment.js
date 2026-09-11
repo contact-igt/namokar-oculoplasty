@@ -24,6 +24,23 @@ export default async function handler(req, res) {
     });
   }
 
+  const trimmedName = String(name).trim();
+  const phoneNumber = String(phone).trim();
+
+  if (!/^[A-Za-z][A-Za-z\s'.-]*$/.test(trimmedName) || trimmedName.length < 2) {
+    return res.status(400).json({
+      success: false,
+      message: "Enter a valid name.",
+    });
+  }
+
+  if (!/^\d{10}$/.test(phoneNumber)) {
+    return res.status(400).json({
+      success: false,
+      message: "Enter a valid 10-digit phone number.",
+    });
+  }
+
   const googleSheetUrl =
     "https://script.google.com/macros/s/AKfycbysanD_yhMhnPg_4wbRwroARYWm1ba9opnHTN1iIUmLGK35meTHeThB5spXj7QwmQZi/exec";
 
@@ -37,8 +54,8 @@ export default async function handler(req, res) {
   const payload = {
     timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
     doctor: doctor || "Not Selected",
-    name,
-    phone,
+    name: trimmedName,
+    phone: phoneNumber,
     date: date || "Not Specified",
     time: time || "Not Specified",
     ip_address: clientIp,
