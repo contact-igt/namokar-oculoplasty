@@ -42,7 +42,8 @@ export default async function handler(req, res) {
   }
 
   const googleSheetUrl =
-    "https://script.google.com/macros/s/AKfycbysanD_yhMhnPg_4wbRwroARYWm1ba9opnHTN1iIUmLGK35meTHeThB5spXj7QwmQZi/exec";
+    process.env.GOOGLE_SHEET_URL ||
+    "https://script.google.com/macros/s/AKfycbwuvkqaG6h2aYO6dkUf8IZNZst4xCEKvrD7k6T8XQS_7v1wU_saycqo5Z8qz-vDE5hm2w/exec";
 
   // Fallback to request header IP if client IP string is not provided
   const clientIp =
