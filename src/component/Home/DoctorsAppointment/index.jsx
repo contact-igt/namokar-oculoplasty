@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Loader2, PhoneCall } from "lucide-react";
@@ -11,6 +11,7 @@ import { z } from "zod";
 import { useRouter } from "next/router";
 import { homeContent } from "@/constant/homeContent";
 import { getUTM } from "@/utils/useUTMSource";
+import { buildLeadPayload, submitLead } from "@/services/submitLead";
 import styles from "./styles.module.css";
 
 const appointmentSchema = z.object({
@@ -30,23 +31,7 @@ export default function DoctorsAppointment() {
 
   const [serverStatus, setServerStatus] = useState({ success: false, message: "" });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [ipid, setipid] = useState("");
   const router = useRouter();
-
-  const getIpAddress = async () => {
-    try {
-      const ipResponse = await fetch("https://api.ipify.org?format=json");
-      const ipData = await ipResponse.json();
-      setipid(ipData.ip || "");
-    } catch (err) {
-      console.error("IP fetch error:", err);
-    }
-  };
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    getIpAddress();
-  }, []);
 
   const {
     register,
@@ -63,35 +48,23 @@ export default function DoctorsAppointment() {
 
   const onSubmit = async (data) => {
     setServerStatus({ success: false, message: "" });
-    const payload = {
-      doctor: largeDoctor?.name || "Dr. Poonam Jain",
-      name: data.name.trim(),
-      phone: data.phone,
-      ip_address: ipid,
+    const payload = buildLeadPayload({ name: data.name, phone: data.phone, doctor: largeDoctor?.name || "Dr. Poonam Jain", utm: {
       utm_source: getUTM("utm_source"),
       utm_medium: getUTM("utm_medium"),
       utm_campaign: getUTM("utm_campaign"),
       utm_term: getUTM("utm_term"),
       utm_content: getUTM("utm_content"),
-    };
+    } });
 
     try {
-      const response = await fetch("/api/appointment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await response.json();
+      const result = await submitLead(payload);
 
       if (result.success) {
         setIsSubmitted(true);
-        setServerStatus({ success: true, message: result.message });
+        setServerStatus({ success: true, message: "Appointment request submitted successfully!" });
         router.push("/thank-you");
       } else {
-        setServerStatus({ success: false, message: result.message || "Submission failed." });
+        setServerStatus({ success: false, message: "We could not submit your request. Please try again." });
       }
     } catch (err) {
       console.error(err);
