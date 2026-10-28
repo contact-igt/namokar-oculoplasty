@@ -1,7 +1,7 @@
 const API_URL = process.env.NEXT_PUBLIC_NAMOKAR_LEAD_API_URL || "https://invictusleadbackend-production.up.railway.app/api/v1/namokar-oculoplasty/leads";
 
-export const buildLeadPayload = ({ name, phone, doctor, utm }) => ({
-  submission_id: crypto.randomUUID(), name: name.trim(), phone: phone.trim(), doctor,
+export const buildLeadPayload = ({ name, phone, email, doctor, utm }) => ({
+  submission_id: crypto.randomUUID(), name: name.trim(), phone: phone.trim(), email: email?.trim() || "", doctor,
   service: "Oculoplasty consultation", form_name: "oculoplasty_appointment",
   page_name: "namokar_oculoplasty_landing", source: "website",
   page_url: window.location.href, referrer: document.referrer || null,
