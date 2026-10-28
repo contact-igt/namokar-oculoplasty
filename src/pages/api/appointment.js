@@ -50,7 +50,7 @@ export default async function handler(req, res) {
     });
   }
 
-  const googleSheetUrl = "https://script.google.com/macros/s/AKfycbztz8idqpumD5yEdF_9sfGKNfJh-Lr6ex0S82N-JfksEsFJOWwBAQ17OdvMdzpS6-h4_g/exec"
+  const googleSheetUrl = "https://script.google.com/macros/s/AKfycbzZ_XF4n6yYVU_aLLCyTcxBjnOM-7HpsWkwIRAX81Gq3rutfLhFnAkuLQrAcTgsNpHtqg/exec"
 
   // Fallback to request header IP if client IP string is not provided
   const clientIp =
