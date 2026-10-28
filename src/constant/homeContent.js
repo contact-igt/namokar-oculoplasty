@@ -31,6 +31,7 @@ export const homeContent = {
         doctorPlaceholder: "Select a Doctor",
         name: "Your Name",
         phone: "Phone Number",
+        email: "Email Address",
         date: "Select Date",
         datePlaceholder: "mm/dd/yyyy",
         time: "Select Time",

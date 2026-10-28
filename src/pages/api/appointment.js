@@ -7,6 +7,7 @@ export default async function handler(req, res) {
     doctor,
     name,
     phone,
+    email,
     date,
     time,
     ip_address,
@@ -26,6 +27,7 @@ export default async function handler(req, res) {
 
   const trimmedName = String(name).trim();
   const phoneNumber = String(phone).trim();
+  const emailAddress = String(email || "").trim();
 
   if (!/^[A-Za-z][A-Za-z\s'.-]*$/.test(trimmedName) || trimmedName.length < 2) {
     return res.status(400).json({
@@ -38,6 +40,13 @@ export default async function handler(req, res) {
     return res.status(400).json({
       success: false,
       message: "Enter a valid 10-digit phone number.",
+    });
+  }
+
+  if (emailAddress && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddress)) {
+    return res.status(400).json({
+      success: false,
+      message: "Enter a valid email address.",
     });
   }
 
@@ -55,6 +64,7 @@ export default async function handler(req, res) {
     doctor: doctor || "Not Selected",
     name: trimmedName,
     phone: phoneNumber,
+    email: emailAddress,
     date: date || "Not Specified",
     time: time || "Not Specified",
     ip_address: clientIp,

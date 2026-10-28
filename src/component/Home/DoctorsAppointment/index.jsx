@@ -21,6 +21,7 @@ const appointmentSchema = z.object({
     .min(2, "Enter a valid name")
     .regex(/^[A-Za-z][A-Za-z\s'.-]*$/, "Enter a valid name"),
   phone: z.string().regex(/^\d{10}$/, "Enter a valid 10-digit phone number"),
+  email: z.string().trim().email("Enter a valid email address").optional().or(z.literal("")),
 });
 
 export default function DoctorsAppointment() {
@@ -43,12 +44,13 @@ export default function DoctorsAppointment() {
     defaultValues: {
       name: "",
       phone: "",
+      email: "",
     },
   });
 
   const onSubmit = async (data) => {
     setServerStatus({ success: false, message: "" });
-    const payload = buildLeadPayload({ name: data.name, phone: data.phone, doctor: largeDoctor?.name || "Dr. Poonam Jain", utm: {
+    const payload = buildLeadPayload({ name: data.name, phone: data.phone, email: data.email, doctor: largeDoctor?.name || "Dr. Poonam Jain", utm: {
       utm_source: getUTM("utm_source"),
       utm_medium: getUTM("utm_medium"),
       utm_campaign: getUTM("utm_campaign"),
@@ -218,6 +220,19 @@ export default function DoctorsAppointment() {
                     />
                     {errors.phone && (
                       <span className={styles.fieldError}>{errors.phone.message}</span>
+                    )}
+                  </label>
+
+                  <label className={styles.field}>
+                    <span className={styles.label}>{appointment.fields.email}</span>
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      autoComplete="email"
+                      {...register("email")}
+                    />
+                    {errors.email && (
+                      <span className={styles.fieldError}>{errors.email.message}</span>
                     )}
                   </label>
 
